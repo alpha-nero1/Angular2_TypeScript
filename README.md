@@ -25,9 +25,12 @@ however in the root we have several astranged config files:
 1. `.editorconfig` declares how project is displayed in editor
 2. `tsconfig.js` configures the TS compiler
 3. `tslint.json` configures linting
-4. `index.html` is the single page we are seeing in the endpoint. the cli injects script imports at
+
+In addition to two crucial project files:
+
+1. `index.html` is the single page we are seeing in the endpoint. the cli injects script imports at
    runtime
-5. `main.ts` includes the first code to be run and runs the Angular app.
+2. `main.ts` includes the first code to be run and runs the Angular app.
 
 ### Components
 
