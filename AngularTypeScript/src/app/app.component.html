@@ -8,4 +8,6 @@
   />
 </div>
 <h2>Alessandro's first angular app</h2>
-<app-user></app-user>
+<app-user [name]="root_name" (nameChanged)="onNameChanged($event)"></app-user>
+
+<app-cart [items]="root_items" (itemAdded)="onItemWasAdded($event)"></app-cart>

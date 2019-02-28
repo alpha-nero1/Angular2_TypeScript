@@ -7,6 +7,7 @@ Application uses the Angular cli, attainable here: https://cli.angular.io/
 ### Usefull Extensions
 
 1. Angular Essentials https://marketplace.visualstudio.com/items?itemName=johnpapa.angular-essentials
+2. Augury Chrome Extension https://augury.rangle.io/
 
 ## Running the project
 
@@ -108,4 +109,63 @@ component into our Angular application.
     <app-root></app-root>
   </body>
 </html>
+```
+
+### Adding a component via the CLI
+
+The angular CLI ships with a generate script that automatically creates components and adds them not only as new folders in the app directory but adds them to the component array in `app.module.ts`
+
+To create a new component run: `ng generate component <component_name>` or the shorthand: `ng g c`
+
+## Directives
+
+Directives are logic that exist within angular templates to make the front end dynamic and
+interactive. Components themselves are directives however there are two types of
+directives that may be defined within templates...
+
+### Structural Directives
+
+Structural directives are named as such because they change the structure of the DOM. they are
+preceeded by an \*. `ngFor` is the angular directive to create list content (Using an array in the
+component).
+
+```html
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of items">{{ item }}</li>
+</ul>
+```
+
+### Unstructural Directives
+
+Unstructural directives however change the value of DOM elements (style, numeric etc.). The below
+ngClass directive accepts an object and applies different styles according to specified logic.
+
+```html
+<button
+  (click)="addItem($event)"
+  class="btn"
+  [ngClass]="{
+    'btn-primary': current_item !== '',
+    'btn-default': current_item === ''
+     }"
+>
+  Add Item
+</button>
+```
+
+#### Further Logic
+
+Another directive that can be used is ngStyle, note that you may use ternary operators
+to assign values according to conditions.
+
+```html
+<li
+  class="list-group-item"
+  *ngFor="let item of items; let i = index"
+  [ngStyle]="{
+      'background-color': i % 2 === 0 ? 'yellow' : 'blue'
+    }"
+>
+  {{ item }}
+</li>
 ```

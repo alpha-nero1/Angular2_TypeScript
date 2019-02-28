@@ -17,5 +17,15 @@ import { Component } from "@angular/core";
  */
 export class AppComponent {
   title = "AngularTypeScript";
-  name = "Alessandro";
+  root_name = "Alessandro";
+  root_items = ["Apples", "Bananas", "Cherries"];
+
+  onNameChanged(new_name) {
+    this.root_name = new_name;
+  }
+
+  onItemWasAdded(value) {
+    this.root_items.push(value);
+    console.log(this.root_items);
+  }
 }
