@@ -9,6 +9,8 @@
 
   >Add Item
   </button>
+<br>
+<p *ngIf="current_item === ''"> Please enter a new value!</p>
 
   <hr>
 
@@ -23,3 +25,6 @@
     {{ item }}
   </li>
 </ul>
+
+<br>
+

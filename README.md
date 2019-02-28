@@ -2,7 +2,8 @@
 
 This project follows the Udemy course by Maximilian Schwarzmüller: https://www.udemy.com/angular-essentials-angular-2-angular-4-with-typescript/
 
-Application uses the Angular cli, attainable here: https://cli.angular.io/
+Application uses the Angular cli, attainable here: https://cli.angular.io/ and
+Bootstrap: https://getbootstrap.com/docs/4.3/getting-started/introduction/
 
 ### Usefull Extensions
 
@@ -11,7 +12,10 @@ Application uses the Angular cli, attainable here: https://cli.angular.io/
 
 ## Running the project
 
-1. in `/AngularTypeScript` run `ng serve`
+This repository contains two projects. The playground project and the course project.
+
+1. To run the playground project: in `/AngularTypeScript` run `ng serve`
+2. To run the course project: in `/AngularTypeScript-CourseProject` run `ng serve`
 
 ## How Angular works
 
@@ -133,6 +137,13 @@ component).
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let item of items">{{ item }}</li>
 </ul>
+```
+
+Additionally `ngIf` conditionally displays content by accepting an expression that must result in
+true or false.
+
+```html
+<p *ngIf="current_item === ''">Please enter a new value!</p>
 ```
 
 ### Unstructural Directives

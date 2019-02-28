@@ -1,0 +1,17 @@
+<div>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="{active: chosen_side === 'ALL_SIDES'}" (click)="onChose('ALL_SIDES')" style="cursor: pointer" >All</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="{active: chosen_side === 'LIGHT_SIDE'}" (click)="onChose('LIGHT_SIDE')" style="cursor: pointer">Light</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="{active: chosen_side === 'DARK_SIDE'}" (click)="onChose('DARK_SIDE')" style="cursor: pointer">Dark</a>
+    </li>
+  </ul>
+  <p>{{chosen_side}}</p>
+  <app-list [characters]="getFilteredCharacters()"
+  (sideAssigned)="onSideAssigned($event)"
+  ></app-list>
+</div>
