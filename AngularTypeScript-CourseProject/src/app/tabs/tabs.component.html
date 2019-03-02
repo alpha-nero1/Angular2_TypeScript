@@ -11,7 +11,6 @@
     </li>
   </ul>
   <p>{{chosen_side}}</p>
-  <app-list [characters]="getFilteredCharacters()"
-  (sideAssigned)="onSideAssigned($event)"
+  <app-list [characters]="getCharacters()"
   ></app-list>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import Character from "../models/Character";
 import { DARK_SIDE, LIGHT_SIDE, ALL_SIDES } from "../utils/keys";
+import { StarWarsService } from "../star-wars.service";
 
 @Component({
   selector: "app-item",
@@ -9,14 +10,20 @@ import { DARK_SIDE, LIGHT_SIDE, ALL_SIDES } from "../utils/keys";
 })
 export class ItemComponent implements OnInit {
   @Input() character: Character;
-  @Output() sideAssigned = new EventEmitter<Character>();
+  swService: StarWarsService;
 
-  constructor() {}
+  /**
+   * Dependancy injection.
+   * @param swService
+   */
+  constructor(swService: StarWarsService) {
+    this.swService = swService;
+  }
 
   ngOnInit() {}
 
   onAssignSide(side: string) {
-    this.sideAssigned.emit({
+    this.swService.onSideAssigned({
       ...this.character,
       side
     });

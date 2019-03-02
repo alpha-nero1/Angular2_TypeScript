@@ -180,3 +180,9 @@ to assign values according to conditions.
   {{ item }}
 </li>
 ```
+
+## Services
+
+## Validation
+
+More on angular validation here: https://angular.io/guide/form-validation
